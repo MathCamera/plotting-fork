@@ -2499,3 +2499,11 @@ l10n-internal-time = {DATETIME($d, minute: "numeric", hour: "numeric")}
 })(typeof window !== undefined ? window : this || {});
 
 })();
+
+function export_plot(calculator){
+    var items = calculator.getState().expressions.list.map(x => x.latex);
+
+    if (items.length > 0 && items[0] != undefined) {
+        return items
+    }
+}
