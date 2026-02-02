@@ -2501,7 +2501,7 @@ l10n-internal-time = {DATETIME($d, minute: "numeric", hour: "numeric")}
 })();
 
 function export_plot(calculator){
-    var items = calculator.getState().expressions.list.map(x => x.latex);
+    var items = calculator.getState().expressions.list.map(({ latex, color }) => ([ latex, color]));
 
     if (items.length > 0 && items[0] != undefined) {
         return items
